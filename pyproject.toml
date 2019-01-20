@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sysfacts"
-version = "0.1.3"
+version = "0.2.0"
 description = "Collect system information"
 authors = ["Panos Mavrogiorgos <pmav99@gmail.com>"]
 license = "MIT"
