@@ -33,6 +33,7 @@ black = {version = "^18.3-alpha.0",allows-prereleases = true}
 pudb = "^2018.1"
 ipython = "^7.2"
 pytest-cov = "^2.6"
+bump2version = "^0.5.10"
 
 [tool.poetry.scripts]
 sysfacts = "sysfacts.cli:main"
