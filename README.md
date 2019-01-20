@@ -30,7 +30,7 @@ the `sysfacts` script in `~/.local/bin`.
 
 ### `pip`
 
-Alternatively you can use good old `pip` but this is more fragile than
+Alternatively you can use good old `pip` but this is more fragile than `pipx`.
 
 ``` bash
 pip install --user sysfacts
@@ -49,7 +49,7 @@ poetry add sysfacts
 ### Standalone
 
 On standalone mode the output format can be either JSON or YAML. You can also choose
-between a JSON data blob or pretty-printed and colored output.
+between a JSON data blob or colored, pretty-printed output.
 
 ``` shell
 sysfacts --help
