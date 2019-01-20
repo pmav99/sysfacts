@@ -1,6 +1,6 @@
 # sysfacts
 
-[![Build Status](https://travis-ci.com/pmav99/sysfacts.svg?branch=master)](https://travis-ci.com/pmav99/sysfacts)
+[![PyPI version](https://badge.fury.io/py/sysfacts.svg)](https://badge.fury.io/py/sysfacts)
 
 `sysfacts` is a system information collector.
 
