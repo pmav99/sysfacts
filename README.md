@@ -58,10 +58,10 @@ sysfacts --help
 # JSON output
 sysfacts
 sysfacts --pretty
-sysfacts --pretty --color
+sysfacts --pretty --no-color
 # YAML output
 sysfacts --yaml
-sysfacts --yaml --color
+sysfacts --yaml --no-color
 ```
 
 ### API
