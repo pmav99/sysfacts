@@ -6,6 +6,7 @@ import ruamel.yaml  # type: ignore
 from pygments import highlight, lexers, formatters  # type: ignore
 
 from .api import collect_facts
+from . import __version__
 
 # https://yaml.readthedocs.io/en/latest/example.html#output-of-dump-as-a-string
 class StringYAML(ruamel.yaml.YAML):
@@ -31,6 +32,7 @@ def colorize(string: str, lexer) -> str:
 @click.option("-c", "--color", is_flag=True, help="Colorizes output")
 @click.option("-p", "--pretty", is_flag=True, help="Pretty prints json output")
 @click.option("-y", "--yaml", is_flag=True, help="Returns facts as yaml")
+@click.version_option(version=__version__)
 def main(color, pretty, yaml):
     """Gather facts about the system."""
     facts = collect_facts()
