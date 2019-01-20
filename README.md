@@ -12,21 +12,23 @@ tries to leverage existing cross-platform python libraries.
 ### `pipx`
 
 The recommended installation method is [pipx](https://github.com/cs01/pipx).  More
-specifically, if you need to run `sysfacts` just once, you can do it from a *temporary*
-virtual environment with:
-
-``` shell
-pipx run sysfacts
-```
-
-If you need to actually install `sysfacts` for your user you can do it with:
+specifically, you can install `sysfacts` for your user with:
 
 ```
 pipx install sysfacts
 ```
 
-This command will create a virtual environment in `~/.local/pipx/venvs/sysfacts` and add
-the `sysfacts` script in `~/.local/bin`.
+The above command will create a virtual environment in `~/.local/pipx/venvs/sysfacts`
+and add the `sysfacts` script in `~/.local/bin`.
+
+In case you need to run `sysfacts` just once, without installing it, you can do it with
+
+``` shell
+pipx run sysfacts
+```
+
+This way, `pipx` will create a temporary virtual environment, install `sysfacts`, run it
+and cleanup afterwards.
 
 ### `pip`
 
