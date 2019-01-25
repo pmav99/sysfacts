@@ -48,17 +48,20 @@ poetry add sysfacts
 
 ## Usage
 
-### Standalone
+### CLI application
 
-On standalone mode the output format can be either JSON or YAML. You can also choose
-between a JSON data blob or colored, pretty-printed output.
+On the CLI application there are three options for the output format:
+
+- colored, pretty-printed JSON (the default)
+- machine readable JSON blob
+- YAML
 
 ``` shell
 sysfacts --help
 # JSON output
-sysfacts
-sysfacts --pretty
-sysfacts --pretty --no-color
+sysfacts                      # colored + pretty-printed
+sysfacts --no-color           # pretty-printed
+sysfacts --blob               # machine readable
 # YAML output
 sysfacts --yaml
 sysfacts --yaml --no-color

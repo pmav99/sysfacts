@@ -29,11 +29,11 @@ def colorize(string: str, lexer) -> str:
 
 
 @click.command()
-@click.option("-p", "--pretty", is_flag=True, help="Pretty print json output")
+@click.option("-b", "--blob", is_flag=True, help="Pretty print json output")
 @click.option("-y", "--yaml", is_flag=True, help="Return facts as yaml")
 @click.option("--no-color", is_flag=True, help="Don't colorize output")
 @click.version_option(version=__version__)
-def main(no_color, pretty, yaml):
+def main(blob, yaml, no_color):
     """Gather facts about the system."""
     facts = collect_facts()
     if yaml:
@@ -41,10 +41,10 @@ def main(no_color, pretty, yaml):
         if not no_color:
             out = colorize(out, lexers.YamlLexer())
     else:
-        if pretty:
+        if blob:
+            out = json.dumps(facts)
+        else:
             out = json.dumps(facts, indent=2)
             if not no_color:
                 out = colorize(out, lexers.JsonLexer())
-        else:
-            out = json.dumps(facts)
     click.echo(out)

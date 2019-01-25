@@ -25,21 +25,21 @@ class TestCLI(object):
         assert "version" in result.output
 
     def test_json_blob(self, runner):
+        result = runner.invoke(cli.main, ["--blob"])
+        parsed = json.loads(result.output)
+        assert result.exit_code == 0
+        assert len(parsed) > 0
+        assert "cpu_info" in parsed.keys()
+
+    def test_json(self, runner):
         result = runner.invoke(cli.main, [])
         parsed = json.loads(result.output)
         assert result.exit_code == 0
         assert len(parsed) > 0
         assert "cpu_info" in parsed.keys()
 
-    def test_json_pretty(self, runner):
-        result = runner.invoke(cli.main, ["--pretty"])
-        parsed = json.loads(result.output)
-        assert result.exit_code == 0
-        assert len(parsed) > 0
-        assert "cpu_info" in parsed.keys()
-
-    def test_json_pretty_no_color(self, runner):
-        result = runner.invoke(cli.main, ["--pretty", "--no-color"])
+    def test_json_no_color(self, runner):
+        result = runner.invoke(cli.main, ["--no-color"])
         parsed = json.loads(result.output)
         assert result.exit_code == 0
         assert len(parsed) > 0
